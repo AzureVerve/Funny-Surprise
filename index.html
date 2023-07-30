@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-	const links = [ /*1) Jackbox*/ "https://youtu.be/O0lykTBIR4A", 
-	/*2) Duck Accident*/ "https://youtu.be/RlyzHkRESaI", 
-	/*3) Funniest Frontier Airlines Flight Attendant*/ "https://youtu.be/KqUqXZVM0NQ", 
-	/*4) Matt Slays*/ "https://youtu.be/uU6o4XgUIxU", "https://stimpertfaces.netlify.app/", "https://www.youtube.com/watch?v=1ct5Vg98zOg", 
-	"https://youtube.com/clip/UgkxgqmpRQoc2y7Tz1d27AxsIWHxkAoPt5mI", "https://youtu.be/wrzadrpBGA4?t=10"]
-	
-	rand = Math.floor(Math.random() * links.length);
-	
-	window.open(links[rand]);
-	window.close();
-</script>
+	<title>Funny Surprise</title>
 </head>
 <body>
+	<h2>Funny Surprise</h2>
+	<p>If the surprise doesn't load up, please click the url below:</p>
+	<p id="urlP"></p>
+	<p><strong>Make sure to allow pop ups</strong></p>
+	<script>
+		const links = [ /*1) Jackbox*/ "https://youtu.be/O0lykTBIR4A", 
+		/*2) Duck Accident*/ "https://youtu.be/RlyzHkRESaI", 
+		/*3) Funniest Frontier Airlines Flight Attendant*/ "https://youtu.be/KqUqXZVM0NQ", 
+		/*4) Funny Southwest Attendant*/ "https://youtu.be/uU6o4XgUIxU", 
+		/*5) Stimpert Faces*/ "https://stimpertfaces.netlify.app/", 
+		/*6) Robert - Southwest Flight Attendant*/ "https://www.youtube.com/watch?v=1ct5Vg98zOg", 
+		/*7) Clip - Jackbox VeggieTales Sing*/ "https://youtube.com/clip/UgkxgqmpRQoc2y7Tz1d27AxsIWHxkAoPt5mI", 
+		/*8) 12 ways to get kicked out of Walmart*/ "https://youtu.be/wrzadrpBGA4?t=10"]
+		
+		rand = Math.floor(Math.random() * links.length);
 
+		var link = document.createElement('a');
+		link.textContent = links[rand];
+		link.href = links[rand];
+		document.getElementById('urlP').appendChild(link);
+		//var text = document.getElementById("urlP").innerHTML = links[rand];
+		
+		window.open(links[rand]);
+		window.close();
+	</script>
 </body>
 </html>
